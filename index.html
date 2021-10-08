@@ -3,13 +3,169 @@
 	<head>
 		<meta charset="utf-8">
 		<title></title>
+		<style>
+			/* 作业1 */
+			#a {
+				width: 100px;
+				height: 100px;
+			}
+			#a .b {
+				padding: 10px;
+				border: 2px solid black;
+				display: none;
+			}
+			/* 作业2 */
+			body {
+				position: relative;
+			}
+			#b .b1 {
+				width: 200px;
+				height: 300px;
+				background-color: pink;
+				position: absolute;
+				left: 0;
+				right: 0;
+				margin: 0 auto;
+				transform: translateY(25%);
+				display: none;
+				
+			}
+			#b span {
+				position: absolute;
+				right: 0.625rem;
+				top: 0;
+				cursor: pointer;
+				color: gray;
+			}
+			#b span:hover {
+				color: black;
+			}
+			/* 作业3 */
+			#c {
+				width: 100px;
+				height: 100px;
+			}
+			/* 作业4 */
+			#d {
+				width: 12.5rem;
+				height: 150px;
+			}
+			#d ul {
+				margin: 0;padding: 0;
+			}
+			#d li {
+				list-style: none;
+				float: left;
+				width: 50px;
+			}
+			/* 作业5 */
+			#e {
+				position: relative;
+			}
+			#e img {
+				width: 25px;
+				height: 25px;
+				position: absolute;
+				top: 0;
+				left: 150px;
+			}
+		</style>
 	</head>
 	<body>
-		<h1>作业</h1>
-		<a href="太阳-地球-月亮.html">太阳-地球-月亮</a>
+		<!-- 作业1 -->
+		<div id="a">
+			<button type="button">按钮</button>
+			<div class="a1">wfe fnow  nfoowi foiw</div>
+		</div>
+		<!-- 作业2 -->
+		<div id="b">
+			<a href="#">登录</a>
+			<div class="b1">
+				<span>X</span>
+			</div>
+		</div>
 		<br>
-		<a href="盒子3d.html">旋转盒子</a>
+		<!-- 作业3 -->
+		<div id="c">
+			<input type="text" value="请输入"/>
+		</div>
+		<!-- 作业4 -->
+		<div id="d">
+			<img src="./img/1.jpg" alt="" width="100%" height="80%" class="d5">
+			<ul>
+				<li class="d1">
+					<img src="./img/1.jpg" width="40px">
+				</li>
+				<li class="d2">
+					<img src="./img/2.jpg" width="40px">
+				</li>
+				<li class="d3">
+					<img src="./img/3.jpg" width="40px">
+				</li>
+				<li class="d4">
+					<img src="./img/4.jpg" width="40px">
+				</li>
+			</ul>
+		</div>
 		<br>
-		<a href="逐帧动画.html">逐帧动画</a>
+		<br>
+		<!-- 作业5 -->
+		<div id="e">
+			<input type="password" />
+			<img src="./img/eyenone.png" alt="">
+		</div>
+		<script >
+			// 作业1
+			document.querySelector('#a button').onmouseover = function() {
+				document.querySelector('#a .a1').style.display = 'block';
+			}
+			document.querySelector('#a button').addEventListener('mouseout',function() {
+				document.querySelector('#a .a1').style.display = 'none';
+			})
+			// 作业2
+			document.querySelector('#b a').addEventListener('click',function() {
+				document.querySelector('#b .b1').style.display = 'block';
+			})
+			document.querySelector('#b span').addEventListener('click',function() {
+				document.querySelector('#b .b1').style.display = 'none';
+			})
+			// 作业3
+			const ca = document.querySelector('#c input');
+			ca.onfocus = function() {
+				if (ca.value == '请输入') {
+					ca.value ='';
+				}
+			}
+			ca.onblur = function() {
+				if (ca.value == '') {
+					ca.value ='请输入';
+				}
+			}
+			// 作业4
+			document.querySelector('#d .d1').addEventListener('mouseover',function() {
+				document.querySelector('#d .d5').src = './img/1.jpg';
+			})
+			document.querySelector('#d .d2').addEventListener('mouseover',function() {
+				document.querySelector('#d .d5').src = './img/2.jpg';
+			})
+			document.querySelector('#d .d3').addEventListener('mouseover',function() {
+				document.querySelector('#d .d5').src = './img/3.jpg';
+			})
+			document.querySelector('#d .d4').addEventListener('mouseover',function() {
+				document.querySelector('#d .d5').src = './img/4.jpg';
+			})
+			// 作业5
+			let ea = 2;
+			document.querySelector('#e img').addEventListener('click',function() {
+				if (ea % 2 == 0) {
+					document.querySelector('#e img').src = './img/eyesee.png';
+					document.querySelector('#e input').type = 'text';
+				}else {
+					document.querySelector('#e img').src = './img/eyenone.png';
+					document.querySelector('#e input').type = 'password';
+				}
+				ea++;
+			})
+		</script>
 	</body>
 </html>
